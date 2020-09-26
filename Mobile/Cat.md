@@ -8,15 +8,9 @@ The main idea finding the flag is that it uses <strong> Mobile Registries</stron
 
 #### Step-1:
 
-  
-
 Unzip the zip with the given password as `hackthebox`
 
-  
-
 You get this image in the zip - `cat.ab`
-
-  
 
 #### Step-2:
 
@@ -28,7 +22,9 @@ The content of the `cat.ab` is as follows:
 
 Go to the path where the `cat.ab` is located and put the following command:
 
-`( printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" ; tail -c +25 cat.ab ) | tar xvz`
+```bash
+( printf "\x1f\x8b\x08\x00\x00\x00\x00\x00" ; tail -c +25 cat.ab ) | tar xvz
+```
 
 #### Step-4:
 
