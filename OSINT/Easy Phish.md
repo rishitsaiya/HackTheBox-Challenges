@@ -6,11 +6,14 @@ Preventing Email Address Spoofing with a 10-Minute Effort. The OSINT are <strong
 
 #### Step-1:
 For the SPF domain of a record:
-`nslookup -type=txt secure-startup.com`
+
+```bash
+nslookup -type=txt secure-startup.com
+```
 
 We get the following result:
 
-```
+```bash
 Server:  dns.google
 Address:  8.8.8.8
 
@@ -22,11 +25,13 @@ secure-startup.com      text =
 
 #### Step-2:
 For the DMARC domain of a record:
-`nslookup -type=txt secure-startup.com`
+```bash
+nslookup -type=txt secure-startup.com
+```
 
 We get the following result:
 
-```
+```bash
 Server:  dns.google
 Address:  8.8.8.8
 
@@ -35,7 +40,7 @@ _dmarc.secure-startup.com       text =
 
         "v=DMARC1;p=none;_F1ddl3_2_DMARC}"
 ```
-
+#### Step-3:
 So finally the flag becomes:
 
 `HTB{RIP_SPF_Always_2nd_F1ddl3_2_DMARC}`
