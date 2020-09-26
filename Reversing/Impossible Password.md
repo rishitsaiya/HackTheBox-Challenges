@@ -16,7 +16,7 @@ When you change permissions by `chmod +x baby` & run by `./baby`, we observe tha
 Open Radar2 by just typing `r2 -A impossible_password.bin` in terminal. 
 
 The following should appear:
-```
+```bash
 [x] Analyze all flags starting with sym. and entry0 (aa)
 [x] Analyze function calls (aac)
 [x] Analyze len bytes of instructions for references (aar)
@@ -32,7 +32,7 @@ We check the main function by typing the following for any key to bypass for the
 `[0x004006a0]> pdf@main`
 
 The following should appear on terminal:
-```
+```bash
 / (fcn) main 283
 |   main (int argc, char **argv, char **envp);
 |           ; var char **local_50h @ rbp-0x50
@@ -137,15 +137,13 @@ The following should appear on terminal:
 |       `-> 0x00400976      c9             leave
 \           0x00400977      c3             ret
 [0x004006a0]> 
-
-
 ```
 We observe that after the print instruction of * and scanning the string from the user, it will print ** only if the input string was `SuperSeKretKey`.
 
 #### Step-5:
 We get an input of ** where our instruction condition is not true. To make it true and irrespective of any input file, we need to bypass this loop in order to execute the middle 3 instructions/
 
-```
+```bash
 |       ,=< 0x00400968      750c           jne 0x400976
 |       |   0x0040096a      488d45c0       lea rax, qword [local_40h]
 |       |   0x0040096e      4889c7         mov rdi, rax
@@ -159,7 +157,7 @@ Press `[0x004006a0]> v` to change the visual mode and then scroll to the require
 
 The instruction should like the following:
 
-```
+```bash
 |       ,=< 0x00400968      750c           jne 0x400976
 |       |   0x0040096a      90             nop                                 
 |       |   0x0040096b      90             nop   
